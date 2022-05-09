@@ -1,7 +1,6 @@
-rich
-click
-nipype==1.6.1
-nilearn
-pybids
-pyyaml
-numpy
+rich == 12.4.0
+click == 8.1.3
+nilearn==0.9.1
+pybids == 0.15.1
+pyyaml == 6.0
+numpy == 1.22.3 
