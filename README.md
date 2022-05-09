@@ -1,11 +1,9 @@
 # Neurocat
 
-```
-                                      _
- _ __   ___ _   _ _ __ ___   ___ __ _| |_
-| '_ \ / _ \ | | | '__/ _ \ / __/ _` | __|
-| | | |  __/ |_| | | | (_) | (_| (_| | |_
-|_| |_|\___|\__,_|_|  \___/ \___\__,_|\__|
+Neurocat is a end-to-end fMRI analysis toolbox. She contains the following features:
 
-```
-Neurocat is a 
+1. Minimal input, but everything in control and reasonably
+
+2. YAML file to store arguments, the default is often acceptable
+
+
