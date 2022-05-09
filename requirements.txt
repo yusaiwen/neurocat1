@@ -1,0 +1,7 @@
+rich
+click
+nipype==1.6.1
+nilearn
+pybids
+pyyaml
+numpy
