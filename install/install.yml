@@ -1,0 +1,6 @@
+# installation configuration file
+# default is actually a nice option
+
+dest: /usr/local # where to store this program
+bin: /usr/local/bin # where to store the soft link
+pip: False # whether to skip python dependency
