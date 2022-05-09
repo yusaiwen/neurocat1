@@ -7,3 +7,6 @@ Neurocat is a end-to-end fMRI analysis toolbox. She contains the following featu
 2. YAML file to store arguments, the default is often acceptable
 
 
+```shell
+pip -r install requirements.txt
+```
