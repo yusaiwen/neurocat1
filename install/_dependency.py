@@ -33,7 +33,7 @@ with open(yml_file,'r', encoding='UTF-8') as f:
 
 
 if pip:
-    req_file = opa('requirements.txt')
+    req_file = opa('../requirements.txt')
     with console.status("[bold green]Installing dependencies...", spinner='moon') as status:
         pipmain(['install', f'-r{req_file}'])
     console.log("Dependency installed!") # for no reason, log doesn't work here!
