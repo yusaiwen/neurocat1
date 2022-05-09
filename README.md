@@ -9,6 +9,10 @@ Neurocat is a end-to-end fMRI analysis toolbox. She contains the following featu
 
 # install
 
+```
+git clone git@github.com:yusaiwen/neurocat.git
+```
+
 Edit `install/install.yml` and run `./install.sh`
 
 Caution:
