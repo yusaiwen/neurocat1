@@ -17,15 +17,12 @@ ACCOUNT = 'Denoise fMRI NIFTI file following fMRIPREP'
 COMMAND_NAME = 'denoiser'
 MEME = "💦"
 
-from rich.console import Console
 
-console = Console()
 
-import RC
 # load basic packages
 from rich.color import Color
 from rich.text import Text
-from termcolor import colored
+from rich.console import Console
 
 #import rich_click as click
 import click
@@ -39,10 +36,7 @@ import sys
 import logging
 from rich.logging import RichHandler
 
-
 from bids import BIDSLayout
-from nipype import DataSink, SelectFiles, IdentityInterface, Node, Workflow
-from nipype.interfaces import afni
 
 import warnings
 with warnings.catch_warnings():
@@ -54,7 +48,9 @@ from nilearn.image import clean_img as denoiser
 
 import numpy as np
 
-
+# self
+from util import RC
+from util.alert import *
 
 class NoSuchPath(Exception):
     '''
@@ -224,7 +220,7 @@ def main(config,
             raise NoSuchPath
         except:
             error_account = 'Can\'t find your general configuration file (／‵Д′)／~ ╧╧'
-            log.exception(red_error(error_account), extra={"markup": True})
+            log_red_error(log, error_account)
             sys.exit(1)
 
     bids_dir, layout_dir = list(yaml2dic(ge_config).values())
@@ -238,7 +234,7 @@ def main(config,
             raise NoSuchPath
         except:
             error_account = 'Can\'t find your denoising configuration file (／‵Д′)／~ ╧╧'
-            log.exception(red_error(error_account), extra={"markup": True})
+            log_red_error(log, error_account)
             sys.exit(1)
 
     confounder, pass_band, dummy = list(yaml2dic(de_config).values())
@@ -250,7 +246,7 @@ def main(config,
             raise NoSuchPath
         except:
             error_account = 'Can\'t find your layout path (／‵Д′)／~ ╧╧'
-            log.exception(red_error(error_account), extra={"markup": True})
+            log_red_error(log, error_account)
             sys.exit(1)
     else:
         console.log(f"Layout directory {layout_dir} found!")
