@@ -1,0 +1,27 @@
+# how to set denoise see: https://nilearn.github.io/stable/modules/generated/nilearn.interfaces.fmriprep.load_confounds.html#nilearn.interfaces.fmriprep.load_confounds
+# we just wrap this function, so set as you want
+# default is 36 parameters(24 motion, 4 wm, 4 csf, 4 GSR)
+# motion: 6 basic(3 translation + 3 rotation)
+# rest: 1 basic + 1 quadratic + 2 derivatives
+confounder: 
+  strategy: 
+    motion: True
+    global_signal: True
+    wm_csf: True
+    compcor: False
+    ica_aroma: False
+    scrub: False
+  motion: full
+  wm_csf: full
+  global_signal: full
+  scrub: None,
+  fd_threshold: 0.2,
+  std_dvars_threshold: 3,
+  compcor: False,
+  n_compcor: False,
+  ica_aroma: False,
+  demean: True
+pass_band:
+  - 0.08
+  - 0.008
+dummy: 4
